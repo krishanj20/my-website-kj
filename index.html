@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f3b">
+  <title>Seville Saturday</title>
+  <style>
+    :root { --ink:#173f3b; --orange:#d9683b; --paper:#fffaf1; --card:#fffdf8; --muted:#66706a; --line:#e6dac8; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.55 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    header { background:var(--ink); color:#fff8ed; padding:42px 20px 28px; }
+    .wrap { max-width:800px; margin:auto; }
+    h1 { font:700 clamp(2.1rem,6vw,3.6rem)/1.05 Georgia,serif; margin:4px 0 8px; }
+    h2 { font:700 1.55rem/1.2 Georgia,serif; margin:0 0 12px; }
+    h3 { margin:0 0 5px; font-size:1.05rem; }
+    .eyebrow { color:#f3bb8c; text-transform:uppercase; letter-spacing:.13em; font-size:.75rem; font-weight:700; }
+    .sub { margin:0; color:#dce5dc; }
+    nav { background:#f5ebdc; border-bottom:1px solid var(--line); }
+    nav .wrap { display:flex; gap:8px; padding:10px 20px; }
+    nav a { text-decoration:none; color:var(--ink); padding:8px 13px; border-radius:100px; font-weight:700; }
+    nav a.active, nav a:hover { color:#fff; background:var(--orange); }
+    main { padding:28px 20px 50px; }
+    .note { background:#f9e7cb; border-left:4px solid var(--orange); padding:14px 16px; border-radius:4px; margin:0 0 26px; }
+    .timeline { display:grid; gap:12px; }
+    .stop { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:17px; display:grid; grid-template-columns:82px 1fr; gap:12px; box-shadow:0 2px 12px #764a1710; }
+    .time { color:var(--orange); font-weight:800; font-size:.9rem; padding-top:2px; }
+    .stop p { margin:0; color:var(--muted); }
+    .map { display:inline-block; margin-top:9px; font-weight:700; color:var(--ink); text-decoration-color:#d9683b; text-decoration-thickness:2px; }
+    .map::before { content:"⌖ "; color:var(--orange); }
+    .dinner { margin-top:29px; padding:21px; background:var(--ink); color:#fef7ea; border-radius:14px; }
+    .dinner p { color:#dce5dc; margin:7px 0 14px; }
+    .options { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+    .option { color:var(--ink); background:#fffaf1; border-radius:9px; padding:14px; text-decoration:none; }
+    .option strong { display:block; }
+    .option span { display:block; color:#66706a; font-size:.9rem; margin-top:3px; }
+    footer { color:var(--muted); font-size:.86rem; padding:0 20px 35px; text-align:center; }
+    @media (max-width:450px) { .stop { grid-template-columns:1fr; gap:2px; } }
+  </style>
+</head>
+<body>
+  <header><div class="wrap">
+    <div class="eyebrow">Saturday 3 October · Seville</div>
+    <h1>Your Seville day</h1>
+    <p class="sub">Plaza de España, Santa Cruz, flamenco at 5 pm, and a great traditional dinner.</p>
+  </div></header>
+  <nav><div class="wrap"><a class="active" href="index.html">Itinerary</a><a href="links.html">Tickets &amp; maps</a></div></nav>
+  <main class="wrap">
+    <div class="note"><strong>Assumption:</strong> this starts at Hotel Giralda Center. Aim to arrive at Casa del Flamenco by <strong>4:30 pm</strong> for your 5 pm show.</div>
+    <section class="timeline">
+      <article class="stop"><div class="time">09:30</div><div><h3>Breakfast near the hotel</h3><p>Keep it relaxed: today has plenty of walking and the dinner will be late.</p></div></article>
+      <article class="stop"><div class="time">10:15–11:15</div><div><h3>Plaza de España</h3><p>Walk the canal, find your favourite tiled province alcove and take photos before the centre gets busier.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Giralda+Center,+Seville&destination=Plaza+de+Espa%C3%B1a,+Seville&travelmode=walking" target="_blank" rel="noopener">Walk from hotel</a></div></article>
+      <article class="stop"><div class="time">11:15–12:15</div><div><h3>Parque de María Luisa → Jardines de Murillo</h3><p>Take the shady, slower route north towards the historic centre. You will arrive at the edge of Santa Cruz.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&origin=Plaza+de+Espa%C3%B1a,+Seville&destination=Jardines+de+Murillo,+Seville&travelmode=walking" target="_blank" rel="noopener">Start the walk</a></div></article>
+      <article class="stop"><div class="time">12:30–13:30</div><div><h3>Early tapas lunch in Santa Cruz</h3><p>Keep lunch light: two or three tapas each is enough. Then enjoy the lanes around Plaza de Doña Elvira and Calle Agua.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&origin=Jardines+de+Murillo,+Seville&destination=Plaza+de+Do%C3%B1a+Elvira,+Seville&travelmode=walking" target="_blank" rel="noopener">Walk into Santa Cruz</a></div></article>
+      <article class="stop"><div class="time">13:45–14:45</div><div><h3>Casa de Pilatos</h3><p>Your Alcázar alternative: a compact, beautiful palace of tiled patios and courtyard gardens. Allow an hour, then take a drink break.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&origin=Plaza+de+Do%C3%B1a+Elvira,+Seville&destination=Casa+de+Pilatos,+Seville&travelmode=walking" target="_blank" rel="noopener">Walk to Casa de Pilatos</a></div></article>
+      <article class="stop"><div class="time">15:45–16:25</div><div><h3>Coffee, then make your way to flamenco</h3><p>Head back through Santa Cruz without rushing. This buffer is deliberate—its streets are a maze.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&origin=Casa+de+Pilatos,+Seville&destination=Casa+del+Flamenco,+Calle+Xim%C3%A9nez+de+Enciso+28,+Seville&travelmode=walking" target="_blank" rel="noopener">Walk to Casa del Flamenco</a></div></article>
+      <article class="stop"><div class="time">17:00–18:00</div><div><h3>Flamenco at Casa del Flamenco</h3><p>Enjoy the show. Your venue is on Calle Ximénez de Enciso, in the heart of Santa Cruz.</p></div></article>
+      <article class="stop"><div class="time">18:15–20:15</div><div><h3>Giralda exterior → Cathedral → Torre del Oro</h3><p>Walk through Plaza del Triunfo and down to the Guadalquivir for the evening light. Stop for a drink before dinner if you fancy it.</p><a class="map" href="https://www.google.com/maps/dir/?api=1&origin=Casa+del+Flamenco,+Calle+Xim%C3%A9nez+de+Enciso+28,+Seville&destination=Torre+del+Oro,+Seville&travelmode=walking" target="_blank" rel="noopener">Walk to the river via the Cathedral</a></div></article>
+    </section>
+    <section class="dinner">
+      <div class="eyebrow">20:30–21:00 · Dinner</div>
+      <h2>Two brilliant traditional options</h2>
+      <p>Both are worth your evening. Choose Casa Morales for an old-bodega tapas dinner near the Cathedral; choose El Rinconcillo for the historic experience if the walk-in bar queue is reasonable.</p>
+      <div class="options">
+        <a class="option" href="https://www.google.com/maps/dir/?api=1&origin=Torre+del+Oro,+Seville&destination=Casa+Morales,+Calle+Garc%C3%ADa+de+Vinuesa+11,+Seville&travelmode=walking" target="_blank" rel="noopener"><strong>Casa Morales</strong><span>Traditional Seville/Andalusia · carrillada, spinach &amp; chickpeas, bacalao pavía · around 15 min from the river</span></a>
+        <a class="option" href="https://www.google.com/maps/dir/?api=1&origin=Torre+del+Oro,+Seville&destination=El+Rinconcillo,+Calle+Gerona+40,+Seville&travelmode=walking" target="_blank" rel="noopener"><strong>El Rinconcillo</strong><span>Historic tapas bar since 1670 · walk-in downstairs bar only if the queue looks sensible · around 25 min from the river</span></a>
+      </div>
+    </section>
+  </main>
+  <footer>Every underlined “walk” link opens turn-by-turn Google Maps in a new tab.</footer>
+</body>
+</html>
