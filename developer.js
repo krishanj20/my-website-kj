@@ -2,6 +2,7 @@
   'use strict';
   const root = document.documentElement;
   const hero = document.querySelector('.hero');
+  const header = document.querySelector('.site-header');
   const chapters = [...document.querySelectorAll('[data-chapter]')];
   const menu = document.querySelector('.app-menu');
   const toggle = document.querySelector('.motion-toggle');
@@ -31,23 +32,36 @@
     pending = false;
     if (reduce.matches || paused) return;
     const height = window.innerHeight;
+    const headerHeight = header?.getBoundingClientRect().height || (narrow.matches ? 60 : 66);
     if (hero) {
       const rect = hero.getBoundingClientRect();
-      const progress = clamp(-rect.top / Math.max(rect.height, 1));
-      hero.style.setProperty('--hero-y', `${progress * -95}px`);
-      hero.style.setProperty('--hero-scale', String(1 + progress * .13));
+      const progress = clamp((headerHeight - rect.top) / Math.max(rect.height * .9, 1));
+      hero.style.setProperty('--hero-y', `${progress * -180}px`);
+      hero.style.setProperty('--hero-x', `${progress * (narrow.matches ? 32 : 95)}px`);
+      hero.style.setProperty('--hero-turn', `${progress * 15}deg`);
+      hero.style.setProperty('--hero-yaw', `${progress * -24}deg`);
+      hero.style.setProperty('--hero-scale', String(1 + progress * .24));
     }
     chapters.forEach(chapter => {
       const rect = chapter.getBoundingClientRect();
       if (rect.bottom < -height * .2 || rect.top > height * 1.2) return;
-      const progress = clamp((height - rect.top) / Math.max(height + rect.height, 1));
-      const enter = clamp((height - rect.top) / (height * .6));
+      const visualRect = chapter.querySelector('.chapter-visual').getBoundingClientRect();
+      // Desktop motion spans the actual sticky travel, rather than the entire
+      // offscreen chapter. Phones animate when the artwork itself enters view.
+      const progress = narrow.matches
+        ? clamp((height * .95 - visualRect.top) / Math.max(height * .8 + visualRect.height * .55, 1))
+        : clamp((headerHeight - rect.top) / Math.max(rect.height - height + headerHeight, 1));
+      const enter = clamp((height - (narrow.matches ? visualRect.top : rect.top)) / (height * .65));
       const callout = clamp((enter - .3) / .7);
+      const direction = Number(chapter.dataset.chapter) % 2 ? -1 : 1;
       chapter.style.setProperty('--p', String(progress));
       chapter.style.setProperty('--enter', String(enter));
       chapter.style.setProperty('--callout', String(callout));
-      chapter.style.setProperty('--move', `${(.5 - progress) * (narrow.matches ? 48 : 150)}px`);
-      chapter.style.setProperty('--tilt', `${(progress - .5) * (narrow.matches ? 5 : 11)}deg`);
+      chapter.style.setProperty('--move', `${(.5 - progress) * (narrow.matches ? 80 : 130)}px`);
+      chapter.style.setProperty('--sweep', `${(progress - .5) * (narrow.matches ? 44 : 145) * direction}px`);
+      chapter.style.setProperty('--tilt', `${(progress - .5) * (narrow.matches ? 16 : 25) * direction}deg`);
+      chapter.style.setProperty('--yaw', `${(progress - .5) * (narrow.matches ? 24 : 46) * direction}deg`);
+      chapter.style.setProperty('--pitch', `${(.5 - progress) * (narrow.matches ? 12 : 18)}deg`);
     });
   }
   function schedule() {
