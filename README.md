@@ -1,9 +1,9 @@
 # Krishan Jethwa
 
-Developer homepage and Annum - Social Calendar website.
+Developer homepage and Soon website.
 
 - [Home](https://krishanj20.github.io/my-website-kj/)
-- [Annum](https://krishanj20.github.io/my-website-kj/socialite.html)
+- [Soon](https://krishanj20.github.io/my-website-kj/soon.html)
 - [Support](https://krishanj20.github.io/my-website-kj/support.html)
 - [Privacy](https://krishanj20.github.io/my-website-kj/privacy.html)
 
